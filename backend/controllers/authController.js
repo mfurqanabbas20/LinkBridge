@@ -89,7 +89,7 @@ const registerUser = async (req, res) => {
       console.log(user);
       
     const msg = `http://localhost:5173/reset/${user._id}`
-    console.log(msg)
+
     sendMail(forgotEmail, msg)
     res.status(200).json('Link Sent')
     }
