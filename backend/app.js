@@ -5,17 +5,17 @@ const cors = require('cors')
 const PORT = process.env.PORT
 const database = require('./config/db')
 
-// connecting the database
-database()
-
-// middlewares
-app.use(express.json())
-
 app.use(cors({
     origin: ['https://linkbridgeweb.vercel.app'],
     methods: ['POST', 'GET', 'PUT', 'DELETE'],
     credentials: true
 }))
+
+// connecting the database
+database()
+
+// middlewares
+app.use(express.json())
 
 
 // importing the Routes
