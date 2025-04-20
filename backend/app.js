@@ -69,8 +69,9 @@ app.use('/api/conversation', conversationRouter)
 // message route
 app.use('/api/message', messageRouter)
 
+
 app.get('/', (req, res) => {
-    return res.status(200).send("Hello World")
+    res.json("Hellow")
 })
 
 // starting the server
