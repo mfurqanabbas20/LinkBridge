@@ -69,6 +69,6 @@ app.use('/api/message', messageRouter)
 
 // starting the server
 app.listen(PORT, () => {
-    console.log('Server is listening on PORT', PORT);
+    console.log('Server is listening on Port', PORT);
 })
 
