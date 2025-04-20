@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.or-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.or-line::before,
+.or-line::after{
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgb(221, 225, 228);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+::-webkit-scrollbar-track {
+    display: none;
+}
