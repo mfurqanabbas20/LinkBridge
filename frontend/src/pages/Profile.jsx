@@ -259,7 +259,7 @@ const Profile = () => {
             }
             <div className="my-4">
               {
-                posts.length > 1
+                posts.length > 0
                 ?
                 <div className="px-40">
                 <button onClick={() => setShowPosts(!showPosts)} className="bg-green-600 w-32 h-10 font-outfit font-bold text-white rounded-xl">{showPosts ? "Show Less" : "Show More"}  &nbsp;+ </button>

@@ -84,7 +84,7 @@ const SearchUser = ({searchUser}) => {
       position: 'bottom-left'
     })
     } catch (error) {
-      
+      console.log(error)
     }
     
   }
@@ -104,10 +104,8 @@ const SearchUser = ({searchUser}) => {
         
         {
         isPending && searchUser?.connections.some((item) => {
-          if(item.sender){
-            if(user._id !== item.sender){
-              return;
-            }
+          if(item.user === user._id){
+            return;
           }
           return item.user !== user._id
         }) 
@@ -115,6 +113,8 @@ const SearchUser = ({searchUser}) => {
         <button onClick={() => handleDisconnect(searchUser._id)} className='w-28 h-8 border border-blue-600 text-blue-500 font-semibold rounded-full drop-shadow-sm'>Requested</button>
         :
         isPending && searchUser?.connections.some((item) => {
+          console.log(item);
+          
           return item.user === user._id
         })
         ?

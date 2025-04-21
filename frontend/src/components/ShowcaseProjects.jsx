@@ -118,7 +118,6 @@ const ShowcaseProjects = () => {
       </h1>
       <div className='top-bar flex items-center gap-10 font-poppins'>
         <div>
-          {console.log(projects)}
           <h1 className='font-bold'><CountUp end={projects.filter((item) => item.approvalStatus !== 'Pending').length}/></h1>
           <p className='text-sm'>Pending</p>
         </div>
