@@ -64,24 +64,38 @@ const updateUser = async(req, res) => {
 const deleteUser = async(req, res) => {
   try {
     const id = req.params.id  
+    const user = await userModel.findOne({_id: id})
+    // If the user is student
+    if(user.role === 'Student'){
+      // deleting all the posts linked to that user
+      const post = await postModel.deleteMany({user: id})
+      // now deleting all the comment created by that user
+      const comments = await postModel.updateMany({}, {$pull: {comments: {userId: id}}})
+      const likes = await postModel.updateMany({}, {$pull: {likes: id}})
+      // deleting the rating associated with that user on showcase project
+      const rating_project = await projectModel.updateMany({}, {$pull: {rating: {ratedBy: id}}})
+    }
+    
+    if(user.role === 'Industry Professional'){
+      const ideas = await ideaModel.deleteMany({createdBy: user})
+      const problems = await industryModel.deleteMany({createdBy: user})
+    }
+
     // first deleting all the conversations that include this user
     const conversations = await conversationModel.deleteMany({members: id})
+
     // now deleting all the connections of him
-    // const connections = await us
-    // now deleting all the peer posts of him
-    const posts = await postModel.deleteMany({user: id})
-    // now deleting all the ideas associated with him
-
-    // now deleting all the notifications associated with him
-
-    // now deleting all the industry posts associated with him
+    const connections = await userModel.updateMany(
+      {},
+      {$pull: {connections: {$or: [{user: id}, {sender: id}]}}}
+    )
 
     // finally deleting that user
-    // await userModel.findByIdAndDelete(req.params.id)
-    res.status(200).json({success: true, message: 'User deleted'})
+    await userModel.findByIdAndDelete(req.params.id)
+    return res.status(200).json({success: true, message: 'User deleted'})
   } catch (error) {
     console.log(error);
-    res.status(500).json('Error Occured')
+    return res.status(500).json('Error Occured')
   }
 }
 
