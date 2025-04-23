@@ -86,7 +86,6 @@ const registerUser = async (req, res) => {
       if(!user){
       return res.status(401).json({success: false, message: 'User not exits'})
       }
-      console.log(user);
       
     const msg = `http://localhost:5173/reset/${user._id}`
 
