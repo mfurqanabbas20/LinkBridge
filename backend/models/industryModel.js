@@ -19,7 +19,8 @@ const industrySchema = mongoose.Schema({
     budget: {
         type: Number,
         required: true,
-        min: 100
+        min: 10,
+        max: 5000,
     },
     description: {
         type: String,

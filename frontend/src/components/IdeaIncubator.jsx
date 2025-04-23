@@ -346,7 +346,9 @@ const StudentIdea = () => {
   )
 }
 
+
 // this is for ai idea 
+
 
 const AiIdea = () => {
   const Key = import.meta.env.VITE_AI_KEY
@@ -369,7 +371,6 @@ const AiIdea = () => {
         'Content-Type': 'application/json'
     }
     })
-    console.log(response);
     
     setIdea(response.data.text)
     }
@@ -403,7 +404,7 @@ const AiIdea = () => {
         loading ? <MutatingDots/> : 
         (
         <div className='px-16 text-justify text-md opacity-80'>
-          <p>
+          <p style={{whiteSpace: 'pre-line'}} className=''>
           {idea}
           </p>
         </div>

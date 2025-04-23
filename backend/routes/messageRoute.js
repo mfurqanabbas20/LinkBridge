@@ -3,7 +3,6 @@ const { addMessage, getMessage, getLatestMessage, readMessages, unreadMessages }
 const {authMiddleware} = require('../middlewares/authMiddlewares')
 const messageRouter = express.Router()
 
-
 messageRouter.post('/new', addMessage)
 
 messageRouter.get('/:conversationId', getMessage)

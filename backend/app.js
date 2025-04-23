@@ -5,7 +5,12 @@ const cors = require('cors')
 const PORT = process.env.PORT
 const database = require('./config/db')
 
-app.use(cors())
+app.use(cors({
+    origin: ["https://linkbridgeweb.vercel.app/"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true
+   }
+))
 
 // connecting the database
 database()
@@ -28,6 +33,12 @@ const resourceRouter = require('./routes/resourceRoute')
 const industryRouter = require('./routes/industryRoute')
 const paymentRouter = require('./routes/paymentRoute')
 
+
+// first endpoint
+
+app.get('/', (req, res) => {
+    res.send()
+})
 
 // api endpoints
 app.use('/uploads', express.static('uploads'))

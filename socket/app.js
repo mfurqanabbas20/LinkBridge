@@ -42,7 +42,7 @@ io.on("connection", (socket) => {
         const sender = await userModel.findOne({_id: senderId})
         
         try {
-            io.to(user.socketId).emit("getMessage", {
+            io.to(user?.socketId).emit("getMessage", {
                 sender,
                 message
             })
