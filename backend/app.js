@@ -4,6 +4,7 @@ require('dotenv').config()
 const cors = require('cors')
 const PORT = process.env.PORT
 const database = require('./config/db')
+const path = require('path')
 
 app.use(cors({
     origin: ["https://linkbridgeweb.vercel.app"],
