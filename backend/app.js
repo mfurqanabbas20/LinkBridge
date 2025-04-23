@@ -50,7 +50,7 @@ app.get('/', (req, res) => {
 })
 
 // api endpoints
-app.use('/uploads', express.static('uploads'))
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 // for user registration
 app.use('/api/user', userRouter)
