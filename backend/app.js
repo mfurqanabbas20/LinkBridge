@@ -46,7 +46,7 @@ const paymentRouter = require('./routes/paymentRoute')
 // first endpoint
 
 app.get('/', (req, res) => {
-    res.send()
+    res.send("Hello LinkBridge")
 })
 
 // api endpoints
