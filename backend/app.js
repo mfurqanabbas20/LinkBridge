@@ -6,7 +6,7 @@ const PORT = process.env.PORT
 const database = require('./config/db')
 
 app.use(cors({
-    origin: ["https://linkbridgeweb.vercel.app/"],
+    origin: ["https://linkbridgeweb.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
    }
