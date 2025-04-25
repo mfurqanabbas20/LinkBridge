@@ -18,6 +18,7 @@ app.options('*', cors(
     {
         origin: ["https://linkbridgeweb.vercel.app"],
         methods: ["POST", "GET", "PUT", "DELETE"],
+        allowedHeaders: ['token'],
         credentials: true
 }
 ))
