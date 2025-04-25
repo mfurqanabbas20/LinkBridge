@@ -50,7 +50,7 @@ const CheckoutForm = ({amount, problemId, appliedUser}) => {
       const {paymentIntent, error} = await stripe.confirmPayment({
         elements,
         confirmParams: {
-            return_url: `http://localhost:5173/payment/successful/${problemId}/${appliedUser._id}`
+            return_url: `https://linkbridgeweb.vercel.app//payment/successful/${problemId}/${appliedUser._id}`
         }
       })      
       

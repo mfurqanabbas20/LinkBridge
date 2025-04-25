@@ -52,8 +52,8 @@ const createAccount = async (req, res) => {
             if(existing_account.capabilities.transfers == 'inactive'){
                 accountLink = await stripe.accountLinks.create({
                     account: account.id,
-                    refresh_url: 'http://localhost:5173',
-                    return_url: `http://localhost:5173/created-stripe/${id}`,
+                    refresh_url: 'https://linkbridgeweb.vercel.app',
+                    return_url: `https://linkbridgeweb.vercel.app/created-stripe/${id}`,
                     type: 'account_onboarding'
                 })
                 return res.status(200).json({success: true, accountLink})
@@ -77,8 +77,8 @@ const createAccount = async (req, res) => {
 
         accountLink = await stripe.accountLinks.create({
             account: account.id,
-            refresh_url: 'http://localhost:5173',
-            return_url: `http://localhost:5173/created-stripe/${id}`,
+            refresh_url: 'https://linkbridgeweb.vercel.app/',
+            return_url: `https://linkbridgeweb.vercel.app/created-stripe/${id}`,
             type: 'account_onboarding'
         })
 

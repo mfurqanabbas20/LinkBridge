@@ -6,7 +6,7 @@ database()
 
 const io = require('socket.io')(9000, {
     cors: {
-        origin: "http://localhost:5173"
+        origin: "https://linkbridgeweb.vercel.app/"
     }
 })
 

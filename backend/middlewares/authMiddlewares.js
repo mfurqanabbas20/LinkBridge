@@ -7,6 +7,7 @@ const authMiddleware = (req, res, next) => {
     if(!token){
         return res.status(401).json({message: 'Not Authorize User'})
     }
+    
     try {
         const decode_token = jwt.verify(token, process.env.JWT_SECRET)
         req.userId = decode_token.id        

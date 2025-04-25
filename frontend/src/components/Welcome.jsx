@@ -31,7 +31,7 @@ const Welcome = () => {
   const {user} = useContext(UserContext)
   return (
   <div className='max-lg:w-screen mt-10'>
-  <div className='flex justify-between mx-10 gap-6 mt-6 max-md:flex-wrap max-md:w-screen max-md:mx-0 max-md:justify-start' data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine">
+  <div className='flex justify-between mx-10 gap-6 mt-6 max-md:flex-wrap max-md:w-screen max-md:justify-start' data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine">
     <div className='w-3/5 h-40 flex flex-col justify-end bg-blue-100 p-4 rounded-xl max-lg:w-full'>
       <div>
       <h2 className='font-outfit text-2xl font-bold overflow-hidden whitespace-nowrap text-blue-700'>

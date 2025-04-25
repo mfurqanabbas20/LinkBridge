@@ -13,7 +13,6 @@ const Home = () => {
           <a href="#">Home</a>
           <a href="#about-us">About Us</a>
           <a href="#help">Help</a>
-
           <a href="#customer-stories">Reviews</a>
         </div>
         <div className="navbar-right">

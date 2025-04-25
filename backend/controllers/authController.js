@@ -87,7 +87,7 @@ const registerUser = async (req, res) => {
       return res.status(401).json({success: false, message: 'User not exits'})
       }
       
-    const msg = `http://localhost:5173/reset/${user._id}`
+    const msg = `https://linkbridgeweb.vercel.app/reset/${user._id}`
 
     sendMail(forgotEmail, msg)
     res.status(200).json('Link Sent')

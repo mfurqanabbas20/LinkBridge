@@ -13,6 +13,7 @@ import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import Reset from './pages/Reset'
 import UserContext from './context/UserContext'
+import axios from 'axios'
 
 // sub modules importing
 import Profile from './pages/Profile'
@@ -33,6 +34,7 @@ import AcceptedProblem from './pages/AcceptedProblem'
 import StripeAccount from './pages/StripeAccount'
 
 function App() {
+  axios.defaults.withCredentials = true
 
   const {url, setUser, setConnections} = useContext(UserContext)
   const [loading, setLoading] = useState(true)

@@ -61,13 +61,11 @@ const readMessages = async (req, res) => {
 
 // api to get unread messages
 const unreadMessages = async(req, res) => {
-    
     const userId = req.userId
     try {
         // getting conversation where user is member
         const conversationIds = await conversationModel.find({members: userId}).select('_id')
         const messages = await messageModel.find({status: 'unread',conversationId: {$in: conversationIds}, sender: {$ne: userId}})
-        
         return res.status(200).json({success: true, messages})
     } catch (error) {
         console.log(error);
