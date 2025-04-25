@@ -9,7 +9,7 @@ const path = require('path')
 app.use(cors({
     origin: ["https://linkbridgeweb.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE"],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'token'],
     credentials: true
    }
 ))
@@ -18,7 +18,7 @@ app.options('*', cors(
     {
         origin: ["https://linkbridgeweb.vercel.app"],
         methods: ["POST", "GET", "PUT", "DELETE"],
-        allowedHeaders: ['token'],
+        allowedHeaders: ['Content-Type', 'Authorization', 'token'],
         credentials: true
 }
 ))
