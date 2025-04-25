@@ -1,20 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import { toast } from 'react-toastify'
 import axios from 'axios'
 import {DotLottieReact} from '@lottiefiles/dotlottie-react'
 import linkbridge_icon from '../assets/linkbridge-blue-logo.png'
+import UserContext from '../context/UserContext'
 
 const Forgot = () => {
-
+  const {url} = useContext(UserContext)
   const [forgotPassword, setForgotPassword] = useState({
     email: ''
   })
 
   const handleSubmit = async () => { 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/forgot', forgotPassword)
+      const response = await axios.post(`${url}/api/auth/forgot`, forgotPassword)
       toast.success("Link Sent Successfully", {
         position: 'bottom-left',
         autoClose: 3000, 
