@@ -13,7 +13,6 @@ import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import Reset from './pages/Reset'
 import UserContext from './context/UserContext'
-import axios from 'axios'
 
 // sub modules importing
 import Profile from './pages/Profile'

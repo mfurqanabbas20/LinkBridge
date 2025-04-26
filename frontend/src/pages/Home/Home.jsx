@@ -7,9 +7,9 @@ const Home = () => {
     <div>
     <nav className="navbar">
         <div className="navbar-left">
-          <img src={logo} alt="Logo" className="logo" />
+          <img src={logo} alt="Logo" className="logo max-sm:h-10" />
         </div>
-        <div className="navbar-center font-poppins">
+        <div className="navbar-center font-poppins max-md:hidden">
           <a href="#">Home</a>
           <a href="#about-us">About Us</a>
           <a href="#help">Help</a>

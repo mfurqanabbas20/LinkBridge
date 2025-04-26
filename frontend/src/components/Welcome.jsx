@@ -31,7 +31,7 @@ const Welcome = () => {
   const {user} = useContext(UserContext)
   return (
   <div className='max-lg:w-screen mt-10'>
-  <div className='flex justify-between mx-10 gap-6 mt-6 max-md:flex-wrap max-md:w-screen max-md:justify-start' data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine">
+  <div className='flex justify-between gap-6 mt-6 max-md:flex-wrap max-md:w-screen max-md:justify-start w-full px-5' data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine">
     <div className='w-3/5 h-40 flex flex-col justify-end bg-blue-100 p-4 rounded-xl max-lg:w-full'>
       <div>
       <h2 className='font-outfit text-2xl font-bold overflow-hidden whitespace-nowrap text-blue-700'>
@@ -46,7 +46,7 @@ const Welcome = () => {
     </div>
     <WelcomeTime/>
   </div>
-  <div className='flex justify-between px-10 gap-3 mt-8 max-md:px-2 w-full max-md:flex-wrap' data-aos="fade-right" data-aos-delay="600" data-aos-duration="1000" data-aos-easing="ease-in-sine">
+  <div className='flex justify-between px-14 gap-3 mt-8 max-md:px-2 w-full max-md:flex-wrap' data-aos="fade-right" data-aos-delay="600" data-aos-duration="1000" data-aos-easing="ease-in-sine">
       <WelcomeCards color={'orange'} text="Find Projects" icon={<i className="fa-solid fa-magnifying-glass"></i>}/>
       <WelcomeCards color={'blue'} text="Track Projects" icon={<i className="fa-solid fa-gear"></i>}/>
       <WelcomeCards color={'purple'} text="Find Talent" icon={<i className="fa-solid fa-user"></i>}/>
