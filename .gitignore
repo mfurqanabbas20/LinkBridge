@@ -26,7 +26,6 @@ socket/.env
 socket/.env.local
 socket/.env*.*.local
 
-
 # build output 
 
 frontend/dist/

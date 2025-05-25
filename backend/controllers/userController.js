@@ -5,8 +5,8 @@ const industryModel = require("../models/industryModel");
 const notificationModel = require("../models/notificationModel");
 const postModel = require("../models/postModel");
 const projectModel = require("../models/projectModel");
+const cloudinary = require('../config/cloudinary')
 
-const mongoose = require('mongoose')
 // upload profile picture
 const uploadProfilePic = async(req, res) => {
   if(!req.file){
@@ -15,9 +15,17 @@ const uploadProfilePic = async(req, res) => {
   const userId = req.userId
   
   const filePath = req.file.path
+
   try {
-    const user = await userModel.findByIdAndUpdate(userId, {profilePicture: filePath}, {new: true})
+    const uploadedImage = await cloudinary.uploader.upload(filePath, (err, result) => {
+      if(err){
+        return;
+      }
+    })
+
+    const user = await userModel.findByIdAndUpdate(userId, {profilePicture: uploadedImage.secure_url}, {new: true})
     return res.status(200).json({message: 'Uploaded', user})
+
   } catch (error) {
     console.log(error);
     return res.status(500).json({message: 'Error Occured'})

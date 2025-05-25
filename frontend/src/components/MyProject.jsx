@@ -201,7 +201,6 @@ const MyProject = () => {
         : 
         <AddProject/>
         )
-     
     }
     </div>
   )

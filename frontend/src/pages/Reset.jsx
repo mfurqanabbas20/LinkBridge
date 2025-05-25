@@ -6,7 +6,6 @@ import { toast } from 'react-toastify'
 import axios from 'axios'
 import UserContext from '../context/UserContext'
 
-
 const Reset = () => {
   const {url} = useContext(UserContext)
   const {userid} = useParams()

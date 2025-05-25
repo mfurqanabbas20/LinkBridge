@@ -15,7 +15,6 @@ const transporter = nodemailer.createTransport(sgTransport({
         subject: 'Password Reset',
         html: `<h1>${msg}</h1>`
     })
-    console.log('Email Sent');
     
 }
 
