@@ -19,6 +19,7 @@ const uploadProfilePic = async(req, res) => {
   try {
     const uploadedImage = await cloudinary.uploader.upload(filePath, (err, result) => {
       if(err){
+        console.log(err);
         return;
       }
     })
