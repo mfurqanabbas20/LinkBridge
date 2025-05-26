@@ -3,16 +3,25 @@ const {getAllUsers, singleUser, updateUser, deleteUser, uploadProfilePic, upload
 const multer = require('multer')
 const { authMiddleware } = require('../middlewares/authMiddlewares')
 const userRouter = express.Router()
-
+const {CloudinaryStorage} = require('multer-storage-cloudinary')
+const cloudinary = require('../config/cloudinary')
 // Multer storage
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null,"uploads/profileandcover")
-    },
-    filename: (req, file, cb) => {
-      cb(null, `${Date.now()}-${file.originalname}`)
-    }
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//       cb(null,"uploads/profileandcover")
+//     },
+//     filename: (req, file, cb) => {
+//       cb(null, `${Date.now()}-${file.originalname}`)
+//     }
+// })
+
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'linkbridge/profileandcover',
+  }
 })
+
   
 const upload = multer({storage})
 
