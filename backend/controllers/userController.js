@@ -21,6 +21,9 @@ const uploadProfilePic = async(req, res) => {
       folder: profileImages
     })
 
+    console.log(uploadedImage);
+    
+
     const user = await userModel.findByIdAndUpdate(userId, {profilePicture: uploadedImage.secure_url}, {new: true})
     return res.status(200).json({message: 'Uploaded', user})
 
