@@ -251,9 +251,7 @@ const Profile = () => {
                 return <PeerPost profile post={item}/>
               })
               :
-              posts.slice(0,1).map((item) => {
-                console.log('Item inside butter', item);
-                
+              posts.slice(0,1).map((item) => {                
                 return <PeerPost profile post={item}/>
               })
             }
