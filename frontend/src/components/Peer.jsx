@@ -61,7 +61,7 @@ const AddToFeed = ({users}) => {
       if(user.fullname !== item.fullname && !connectedUsers.some((connectedUser) => connectedUser.fullname === item.fullname)){ 
         return (
         <div className='flex my-2 '>
-          <img className='m-2 w-12 h-12 rounded-full object-cover' src={`${url}/${item.profilePicture}`} alt="" />
+          <img className='m-2 w-12 h-12 rounded-full object-cover' src={`${item.profilePicture}`} alt="" />
           <div className='w-9/12'>
             <h1 onClick={() => navigate(`/user/${item?._id}`)} className='cursor-pointer font-semibold'>{item.fullname}</h1>
             <p className=' text-sm'>{item.description}</p>
@@ -87,7 +87,7 @@ const Comment = ({comment}) => {
   
   return(
     <div className='flex gap-2 w-full p-2 my-2 max-sm:p-0'>
-      <img className='w-10 h-10 object-cover rounded-full max-sm:size-8' src={`${url}/${comment.userId.profilePicture ? comment.userId.profilePicture : user.profilePicture}`} alt="" />
+      <img className='w-10 h-10 object-cover rounded-full max-sm:size-8' src={`${comment.userId.profilePicture ? comment.userId.profilePicture : user.profilePicture}`} alt="" />
       <div className="content w-full">
         <div className="user-name flex justify-between">
           <h1 className='text-sm font-bold max-sm:text-xs'>{comment.userId.fullname ? comment.userId.fullname : user.fullname}</h1>
@@ -206,7 +206,7 @@ export const PeerPost = ({profile, post}) => {
       :
       <div className={`bg-white border rounded-lg shadow-sm my-2 max-sm:my-0 ${profile ? "w-8/12" : "w-auto max-sm:w-full"}`}>
       <div className='post-top flex gap-1 p-2 relative'>
-        <img className='h-9 w-9 rounded-full object-cover max-sm:size-8' src={`${url}/${post.user.profilePicture}`} alt="" />
+        <img className='h-9 w-9 rounded-full object-cover max-sm:size-8' src={`${post.user.profilePicture}`} alt="" />
       <div className='flex flex-col'>
         <h1 onClick={() => navigate(`/user/${post?.user._id}`)} className='cursor-pointer text-sm font-bold max-sm:text-xs'>{post?.user.fullname}</h1>
         <p className='text-xs max-sm:text-[10px]'>{format(post?.createdAt)}</p>
@@ -233,7 +233,7 @@ export const PeerPost = ({profile, post}) => {
       {
           post.media.map((item) => {        
             return (
-              <img className='mt-2 w-full h-72 max-sm:h-52 object-contain' src={`${url}/${item}`}/>
+              <img className='mt-2 w-full h-72 max-sm:h-52 object-contain' src={`${item}`}/>
             )
           })
       }

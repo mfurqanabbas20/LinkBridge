@@ -65,14 +65,14 @@ const ProjectCard = ({project, token}) => {
           {/* onclik we refer to that user profile */}
           {project?.members?.map((item) => {
               return (
-                <img onClick={() => navigate(`/user/${item._id}`)} className="w-7 h-7 rounded-full object-cover cursor-pointer" src={`${url}/${item.profilePicture}`} alt="" />
+                <img onClick={() => navigate(`/user/${item._id}`)} className="w-7 h-7 rounded-full object-cover cursor-pointer" src={`${item.profilePicture}`} alt="" />
               )
             })
           }
         </div>
         <h1 className='mt-2'>Project Supervisor</h1>
         <div>
-          <img onClick={() => navigate(`/user/${project.supervisor._id}`)} className="w-7 h-7 cursor-pointer object-cover rounded-full" src={`${url}/${project.supervisor.profilePicture}`} alt="" />
+          <img onClick={() => navigate(`/user/${project.supervisor._id}`)} className="w-7 h-7 cursor-pointer object-cover rounded-full" src={`${project.supervisor.profilePicture}`} alt="" />
         </div>
         {/* Rating stars */}
         <div className='mt-3'>

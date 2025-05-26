@@ -18,7 +18,6 @@ const addMessage = async(req, res) => {
 
 const getMessage = async(req, res) => {
     const {conversationId} = req.params
-
     try {
         // whole messages
         const messages = await messageModel.find({

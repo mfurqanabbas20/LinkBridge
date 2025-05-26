@@ -61,7 +61,7 @@ const Sidebar = ({selectedItem, setSelectedItem}) => {
          }
         <div className='flex flex-col justify-center items-center gap-3 mt-4'>
         <Link className='flex flex-col items-center' to={`/${user.role.charAt(0).toLowerCase()}/${user.username}/profile`}>
-         <img className='w-12 h-12 rounded-full object-cover' src={user.profilePicture ? `${url}/${user.profilePicture}` : sample} alt="" />
+         <img className='w-12 h-12 rounded-full object-cover' src={user.profilePicture ? `${user.profilePicture}` : sample} alt="" />
           <h1 className='font-bold text-md font-outfit'>{user.fullname}</h1>
         </Link>
         <button onClick={handleLogout} className='bg-red-600 text-sm text-white font-semibold w-28 rounded-full p-2'>

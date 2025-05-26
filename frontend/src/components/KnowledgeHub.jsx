@@ -120,7 +120,7 @@ const ResourceCard = ({resource}) => {
         <h1 className="font-outfit font-bold text-xl max-sm:text-lg">{resource.title}</h1>
         <p className="text-sm text-clip max-sm:text-xs">{resource.description}</p>
       </div>
-      <button onClick={() => window.location.href=`${url}/${resource.document}`} className="mx-6 text-sm font-outfit font-bold p-2 w-28 h-10 shadow-md rounded-lg mt-auto">
+      <button onClick={() => window.location.href=`${resource.document}`} className="mx-6 text-sm font-outfit font-bold p-2 w-28 h-10 shadow-md rounded-lg mt-auto">
         Download{" "}
       </button>
     </div>

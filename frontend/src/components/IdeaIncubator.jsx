@@ -137,7 +137,7 @@ const PostedByMeCard = ({idea}) => {
       <div className='w-1/2 border rounded-lg shadow-sm p-4 my-4 max-xl:w-[70vw]'>
         <div className="topbar flex justify-between gap-2">
           <div className='flex items-center gap-2'>
-          <img className='w-10 h-10 rounded-full object-cover' src={`${url}/${user.profilePicture}`} alt="" />
+          <img className='w-10 h-10 rounded-full object-cover' src={`${user.profilePicture}`} alt="" />
           <h1 className='text-sm font-semibold'>{user.fullname}</h1>
           <h1 className='text-lg font-bold'>-</h1>
           <p className='text-sm'>{format(idea.createdAt)}</p>
@@ -232,7 +232,7 @@ const IndustryIdeaPost = ({idea}) => {
   return(
       <div className='w-1/2 border rounded-lg shadow-sm p-4 my-2 max-sm:w-full max-sm:p-2'>
       <div className="topbar flex items-center gap-2">
-        <img className='w-12 h-12 rounded-full object-cover' src={`${url}/${idea?.createdBy?.profilePicture}`} alt="" />
+        <img className='w-12 h-12 rounded-full object-cover' src={`${idea?.createdBy?.profilePicture}`} alt="" />
         <h1>{idea?.createdBy?.fullname}</h1>
         <h1 className='text-lg font-bold'>-</h1>
         <p className='text-sm'>{format(idea.createdAt)}</p>

@@ -25,7 +25,7 @@ export const ProjectCard = ({project}) => {
           {
             project?.members?.map((item) => {
               return (
-                <img className="w-6 h-6 rounded-full" src={`${url}/${item.profilePicture}`} alt="" />
+                <img className="w-6 h-6 rounded-full" src={`${item.profilePicture}`} alt="" />
               )
             })
           }
@@ -172,7 +172,7 @@ const Profile = () => {
               <img
                 className="w-full h-full rounded-xl object-cover"
                 src={
-                  user.coverPicture ? `${url}/${user.coverPicture}` : cover_pic
+                  user.coverPicture ? `${user.coverPicture}` : cover_pic
                 }
                 alt="Cover Photo of User"
               />
@@ -189,7 +189,7 @@ const Profile = () => {
                   className="w-full h-full rounded-full object-cover"
                   src={
                     user.profilePicture
-                      ? `${url}/${user.profilePicture}`
+                      ? `${user.profilePicture}`
                       : sample_profile
                   }
                   alt=""

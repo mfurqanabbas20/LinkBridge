@@ -209,7 +209,7 @@ const ChatWindow = ({socket, messages, setMessages, selectedConversation, setSel
       <div className="flex justify-between">
         <div className='flex gap-2 items-center'>
           <i onClick={() => setSelectedConversation('')} className="fa-solid fa-arrow-left cursor-pointer"></i>
-          <img className='w-12 h-12 rounded-full object-cover' src={`${url}/${reciever.profilePicture}`} alt="" />
+          <img className='w-12 h-12 rounded-full object-cover' src={`${reciever.profilePicture}`} alt="" />
           <div className='flex flex-col'>
             <h1 className='text-lg font-semibold'>{reciever.fullname}</h1>
           </div>

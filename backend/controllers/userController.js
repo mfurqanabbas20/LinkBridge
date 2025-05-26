@@ -2,32 +2,21 @@ const userModel = require("../models/userModel");
 const conversationModel = require("../models/conversationModel");
 const ideaModel = require("../models/ideaModel");
 const industryModel = require("../models/industryModel");
-const notificationModel = require("../models/notificationModel");
 const postModel = require("../models/postModel");
 const projectModel = require("../models/projectModel");
-const cloudinary = require('../config/cloudinary')
 
 // upload profile picture
 const uploadProfilePic = async(req, res) => {
   console.log('Hello', req.file.path);
-  
   if(!req.file){
     return res.status(400).json({message: 'Please Upload file'})
   }  
-
   const userId = req.userId
-  
   const filePath = req.file.path
-
+  
   try {
-    const uploadedImage = await cloudinary.uploader.upload(filePath, {
-      folder: profileImages
-    })
 
-    console.log(uploadedImage);
-    
-
-    const user = await userModel.findByIdAndUpdate(userId, {profilePicture: uploadedImage.secure_url}, {new: true})
+    const user = await userModel.findByIdAndUpdate(userId, {profilePicture: filePath}, {new: true})
     return res.status(200).json({message: 'Uploaded', user})
 
   } catch (error) {

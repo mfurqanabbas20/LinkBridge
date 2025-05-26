@@ -94,7 +94,7 @@ const SearchUser = ({searchUser}) => {
     <>
     <div className='cursor-pointer bg-white flex border my-3 py-4 px-3 justify-between rounded-xl drop-shadow-sm'>
         <div onClick={() => handleClick(searchUser._id)} className='flex items-start'>
-          <img className='m-2 w-16 h-16 object-cover rounded-full' src={`${url}/${searchUser.profilePicture}`} alt="" />
+          <img className='m-2 w-16 h-16 object-cover rounded-full' src={`${searchUser.profilePicture}`} alt="" />
           <div>
             <h1 className='font-bold'>{searchUser.fullname}</h1>
             <p className='truncate w-64 max-sm:text-[13px] max-sm:mt-2'>{searchUser.description}</p>

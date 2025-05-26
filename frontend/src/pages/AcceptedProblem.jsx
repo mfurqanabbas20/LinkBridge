@@ -67,7 +67,7 @@ const AcceptedProblem = () => {
                 <div className='flex flex-col gap-2 w-5/12'>
                 <h1 className='text-xl font-semibold'>Accepted By</h1>
                 <div className='flex flex-col items-center gap-1 my-2'>
-                  <img className='w-28 h-28 object-cover rounded-full' src={`${url}/${problem.assignedTo.profilePicture}`} alt="" />
+                  <img className='w-28 h-28 object-cover rounded-full' src={`${problem.assignedTo.profilePicture}`} alt="" />
                   <h1 className='font-poppins text-lg font-semibold'>{problem.assignedTo.fullname}</h1>  
                 </div>
                 {

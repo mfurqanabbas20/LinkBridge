@@ -116,7 +116,7 @@ const Connections = () => {
                 <div className="relative user-card flex gap-3 items-center w-4/4 mt-8">
                   <img
                     className="size-20 rounded-full max-sm:size-12"
-                    src={`${url}/${item.user?.profilePicture}`}
+                    src={`${item.user?.profilePicture}`}
                     alt=""
                   />
                   <div className="content flex w-full justify-between">
@@ -156,7 +156,7 @@ const Connections = () => {
                 <div className="relative user-card flex gap-3 items-center w-4/4 mt-8">
                   <img
                     className="size-12 rounded-full cursor-pointer max-sm:size-12"
-                    src={`${url}/${item.user.profilePicture}`}
+                    src={`${item.user.profilePicture}`}
                     alt=""
                   />
                   <div className="content flex justify-between w-full">

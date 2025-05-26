@@ -36,7 +36,7 @@ const CoverLetters = () => {
               return (
                 <div className='p-4'>
                   <div className='flex gap-4'>
-                    <img className='size-28 rounded-full object-cover shrink-0' src={`${url}/${item.userId?.profilePicture}`} alt="" />
+                    <img className='size-28 rounded-full object-cover shrink-0' src={`${item.userId?.profilePicture}`} alt="" />
                     <div>
                       <p className='text-sm font-sans w-1/3 text-justify'>{item.title}</p>
                       <button onClick={() => navigate(`/payment/${location.state._id}`, {state: item})} className='mt-4 bg-blue-600 rounded-full w-28 h-8 text-white text-md font-semibold'>Hire</button>

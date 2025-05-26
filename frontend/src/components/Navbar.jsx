@@ -68,7 +68,7 @@ const Navbar = ({main, isChat, selectedItem, setSelectedItem}) => {
           <div onClick={() => setIsLogoMenu(false)} className='absolute right-3 top-3'>
             <i className="fa-solid fa-xmark text-white text-xl"></i>
           </div>
-          <img className='size-16 rounded-full' src={`${url}/${user.profilePicture}`} alt="" />
+          <img className='size-16 rounded-full' src={`${user.profilePicture}`} alt="" />
           <h1 className='font-outfit text-white font-semibold text-md'>{user.fullname}</h1>
           <h1 className='font-outfit text-sm text-white'>{user.connections.length} {user.connections.length > 1 ? "Connections" : "Connection"}</h1>
         </div>
@@ -159,7 +159,7 @@ const Navbar = ({main, isChat, selectedItem, setSelectedItem}) => {
         <div className='bottom-section mb-4 px-2 flex flex-col gap-10'> 
           <hr className='border border-gray-300' />
           <div className='flex gap-3'>
-          <img className='size-20 rounded-full' src={`${url}/${user.profilePicture}`} alt="" />
+          <img className='size-20 rounded-full' src={`${user.profilePicture}`} alt="" />
           <div className=''>
             <h1 className='font-poppins text-[15px]'>{user.fullname}</h1>
             <button onClick={handleLogout} className='mt-2 w-32 h-10 font-poppins bg-red-600 text-white p-2 text-md rounded-lg'>Logout</button>
@@ -220,8 +220,7 @@ const Navbar = ({main, isChat, selectedItem, setSelectedItem}) => {
         </div>
         <div className="profile-pic text-center max-md:hidden">
           <Link to={`/${user.role.charAt(0).toLowerCase()}/${user.username}/profile`} className='flex flex-col items-center justify-center'>
-           <img className='w-8 h-8 rounded-full object-cover hover:scale-105' src={user.profilePicture ? `${url}/${user.profilePicture}` : sample} alt="" />
-           {/* <p className='text-xs'>Profile</p> */}
+           <img className='w-8 h-8 rounded-full object-cover hover:scale-105' src={user.profilePicture ? `${user.profilePicture}` : sample} alt="" />
           </Link>
         </div>
         <div className='min-[640px]:hidden'>

@@ -299,7 +299,7 @@ export const ProjectDisplay = ({ selectedProject }) => {
             selectedProject.members.map((item) => {
                 return(
                 <div className="group-member flex flex-col gap-2 justify-center items-center">
-                  <img className="w-12 h-12 object-cover rounded-full shadow-2xl hover:scale-110 transition cursor-pointer" src={`${url}/${item.profilePicture}`} alt="" />
+                  <img className="w-12 h-12 object-cover rounded-full shadow-2xl hover:scale-110 transition cursor-pointer" src={`${item.profilePicture}`} alt="" />
                   <p className="text-sm">{item.fullname}</p>
                 </div>
                 )
@@ -313,12 +313,12 @@ export const ProjectDisplay = ({ selectedProject }) => {
         {
           user.role === 'Teacher' ?
           <div className="flex flex-col justify-center items-center gap-1">
-              <img className="w-12 h-12 object-cover rounded-full  shadow-2xl hover:scale-110 transition cursor-pointer" src={`${url}/${user.profilePicture}`} alt="" />
+              <img className="w-12 h-12 object-cover rounded-full  shadow-2xl hover:scale-110 transition cursor-pointer" src={`${user.profilePicture}`} alt="" />
               <p className="text-sm">{user.fullname}</p>
           </div>
         :
         <div className="flex flex-col items-center gap-1">
-          <img className="w-12 h-12 object-cover rounded-full  shadow-2xl hover:scale-110 transition cursor-pointer" src={`${url}/${selectedProject.supervisor.profilePicture}`} alt="" />
+          <img className="w-12 h-12 object-cover rounded-full  shadow-2xl hover:scale-110 transition cursor-pointer" src={`${selectedProject.supervisor.profilePicture}`} alt="" />
           <p className="text-sm">{selectedProject.supervisor.fullname}</p>
         </div>
         }

@@ -66,7 +66,7 @@ const AddPeerPost = () => {
     return(
       <div className='flex flex-col gap-4 p-3 bg-white drop-shadow-sm rounded-lg border max-sm:mt-12 max-sm:mx-2'>
         <div className='flex gap-3'>
-          <img className='size-12 rounded-full object-cover max-sm:size-10' src={`${url}/${user.profilePicture}`} alt="" />
+          <img className='size-12 rounded-full object-cover max-sm:size-10' src={`${user.profilePicture}`} alt="" />
           <input className='w-full h-12 max-sm:h-10 max-sm:text-xs border px-4 py-2 text-sm outline-blue-500 rounded-full placeholder-slate-700' type="text" value={post.description} onChange={handleDescription} name='description' placeholder='Get feedback from your peers' />
         </div>
         <div className='flex items-center justify-between px-2'>
