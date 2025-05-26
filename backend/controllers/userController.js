@@ -17,7 +17,9 @@ const uploadProfilePic = async(req, res) => {
   const filePath = req.file.path
 
   try {
-    const uploadedImage = await cloudinary.uploader.upload(filePath)
+    const uploadedImage = await cloudinary.uploader.upload(filePath, {
+      folder: profileImages
+    })
 
     const user = await userModel.findByIdAndUpdate(userId, {profilePicture: uploadedImage.secure_url}, {new: true})
     return res.status(200).json({message: 'Uploaded', user})
