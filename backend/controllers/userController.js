@@ -9,9 +9,12 @@ const cloudinary = require('../config/cloudinary')
 
 // upload profile picture
 const uploadProfilePic = async(req, res) => {
+  console.log('Hello', req.file.path);
+  
   if(!req.file){
     return res.status(400).json({message: 'Please Upload file'})
   }  
+
   const userId = req.userId
   
   const filePath = req.file.path
