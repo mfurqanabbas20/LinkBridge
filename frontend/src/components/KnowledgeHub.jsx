@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import upload_area from "../assets/upload_area.png";
 import axios from "axios";
 import UserContext from "../context/UserContext";
 import randomGradient from "random-gradient";
 import { ProgressBar } from "react-loader-spinner";
+import {toast} from 'react-toastify'
 
 const UploadResource = ({setselectedTab}) => {
   const [showPopup, setshowPopup] = useState(false);
@@ -27,15 +28,32 @@ const UploadResource = ({setselectedTab}) => {
     };
 
     const handleSubmit = async () => {
+      const toastId = toast.loading('Uploading Resource', {
+          position: 'bottom-left'
+      })
+      try {
       const formData = new FormData();
       formData.append("resource", document);
       formData.append("title", resource.title);
       formData.append("description", resource.description);
       await axios.post(`${url}/api/resource/add`, formData);
-      toast.success('Resource Added', {
+      toast.update(toastId, {
+        render: 'Resource Added',
+        isLoading: false,
+        type: 'success',
         position: 'bottom-left',
         autoClose: 2000, 
       })
+      } catch (error) {
+        toast.update(toastId, {
+        render: 'Error Occured Added',
+        isLoading: false,
+        type: 'error',
+        position: 'bottom-left',
+        autoClose: 2000, 
+      })
+      }
+      
     };
 
     const deleteDocument = () => {
@@ -108,7 +126,7 @@ const UploadResource = ({setselectedTab}) => {
 };
 
 const ResourceCard = ({resource}) => {
-  const {url} = useContext(UserContext)
+
   const gradient = randomGradient(resource.title)
     
   return (
@@ -120,7 +138,7 @@ const ResourceCard = ({resource}) => {
         <h1 className="font-outfit font-bold text-xl max-sm:text-lg">{resource.title}</h1>
         <p className="text-sm text-clip max-sm:text-xs">{resource.description}</p>
       </div>
-      <button onClick={() => window.location.href=`${resource.document}`} className="mx-6 text-sm font-outfit font-bold p-2 w-28 h-10 shadow-md rounded-lg mt-auto">
+      <button onClick={() => console.log(`${resource.document}`)} className="mx-6 text-sm font-outfit font-bold p-2 w-28 h-10 shadow-md rounded-lg mt-auto">
         Download{" "}
       </button>
     </div>

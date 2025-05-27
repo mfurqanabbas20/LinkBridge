@@ -110,6 +110,9 @@ const Profile = () => {
   }
 
   const handleProfileImg = async (e) => {
+    const toastId = toast.loading('Uploading Profile Image', {
+      position: 'bottom-left',
+    })
     const file = e.target.files[0];
     const formData = new FormData();
     formData.append("profilePic", file);
@@ -120,10 +123,23 @@ const Profile = () => {
       { headers: { token } }
     );
     setUser(response.data.user);
+    const img = new Image()
+    img.src = response.data.user.profilePicture
+    img.onload = () => {
+      toast.update(toastId, {
+      render: 'Profile Image Uploaded',
+      isLoading: false,
+      type: 'success',
+      autoClose: 2000
+    })
+    }
   };
   
   const handleCoverImg = async (e) => {
     const file = e.target.files[0];
+     const toastId = toast.loading('Uploading Cover Image', {
+      position: 'bottom-left',
+    })
     const formData = new FormData();
     formData.append("coverPic", file);
     const token = localStorage.getItem("token");
@@ -131,6 +147,16 @@ const Profile = () => {
       headers: { token },
     });
     setUser(response.data.user);
+    const img = new Image()
+    img.src = response.data.user.coverPicture
+    img.onload = () => {
+      toast.update(toastId, {
+      render: 'Cover Image Uploaded',
+      isLoading: false,
+      type: 'success',
+      autoClose: 2000
+    })
+    }
   };
 
   const deleteAccount = async () => {

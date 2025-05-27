@@ -16,9 +16,11 @@ const cloudinary = require('../config/cloudinary')
 
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
-  params: {
+  params: (req, file) => ({
     folder: 'linkbridge/resources',
-  }
+    resource_type: 'raw',
+    format: 'pdf'
+  })
 })
 
 const upload = multer({storage})

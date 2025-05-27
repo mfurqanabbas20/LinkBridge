@@ -1,13 +1,13 @@
 const resourceModel = require("../models/resourceModel")
 
 const addResource = async (req, res) => {
-    
     try {
+        
         if(!req.file){
             return res.status(400).json({message: 'Upload Documentation'})
         }
 
-        const filePath = req.file.path
+        const filePath = req.file.path        
 
         const resource = {
             title: req.body.title,
@@ -17,8 +17,6 @@ const addResource = async (req, res) => {
 
         const createdResource = await resourceModel.create(resource)
 
-        console.log(createdResource);
-        
         return res.status(200).json('Uploaded')
         
     } catch (error) {

@@ -30,6 +30,10 @@ const AddPeerPost = () => {
   
     const handleSubmit = async () => {
       try {
+      const toastId = toast.loading('Creating Post', {
+        position: 'bottom-left',
+        autoClose: 2000,
+      })  
       const formData = new FormData()
       formData.append("user", post.user)
       formData.append("description", post.description )
@@ -38,20 +42,20 @@ const AddPeerPost = () => {
       })
       
       await axios.post(`${url}/api/post/add`, formData)
-      
-      toast.success('Post Created', {
+
+      toast.update(toastId, {
+        render: 'Post Created',
+        type: 'success',
+        isLoading: false,
         position: 'bottom-left',
         autoClose: 2000
       })
-
       setPost((prev) => {
         return {
           ...prev,
           description: ''
         }
       })
-
-
       } catch (error) {
         console.log(error);
         toast.error('Error Occured', {

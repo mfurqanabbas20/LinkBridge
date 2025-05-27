@@ -59,18 +59,21 @@ export const ProjectDisplay = ({ selectedProject }) => {
     })
     try {
       await axios.put(`${url}/api/progress/uploadDoc`, formData)
-      toast.success("Documentation Uploaded", {
+      toast.update(toastId, {
+        render: 'Documentation Uploaded',
+        isLoading: false,
+        type: 'success',
         position: 'bottom-left',
         autoClose: 2000
       })
     } catch (error) {
-      toast.error("Error Occured", {
+       toast.update(toastId, {
+        render: 'Error Occured',
+        isLoading: false,
+        type: 'success',
         position: 'bottom-left',
         autoClose: 2000
       })
-    }
-    finally {
-      toast.dismiss(toastId)
     }
   }
 
@@ -120,10 +123,12 @@ export const ProjectDisplay = ({ selectedProject }) => {
   }
   
   const downloadDoc = () => {
-    window.location.href = `${url}/${progress.projectDocumentation}`;
+    console.log(progress.projectDocumentation);
+    
+    window.location.href = `${progress.projectDocumentation}`;
   }
    const downloadCode = () => {
-    window.location.href = `${url}/${progress.projectCode}`;
+    window.location.href = `${progress.projectCode}`;
   }
 
   return (

@@ -11,7 +11,7 @@ const NotificationCard = ({notification}) => {
   return(
     <div className='w-full border-b drop-shadow-sm max-sm:w-screen border-2'>
     <div className={notification.status == 'unread' ? "notification flex items-center gap-2 py-4 border-slate-300 bg-blue-100 p-4 hover:bg-blue-200 cursor-pointer" : "notification flex items-center gap-2 py-4 p-4 bg-white"}>
-          <img className='size-12 rounded-full object-cover' src={notification.fromUser?.profilePicture ? `${url}/${notification.fromUser.profilePicture}` : sample} alt="" />
+          <img className='size-12 rounded-full object-cover' src={notification.fromUser?.profilePicture ? `${notification.fromUser.profilePicture}` : sample} alt="" />
           <div className="notifcation-content flex flex-col">
             <h1 className='font-poppins text-xs font-bold'>{notification?.message} </h1>
             <p className='text-[10px] opacity-80 font-semibold'>{format(notification?.createdAt)}</p>

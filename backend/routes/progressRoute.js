@@ -16,12 +16,14 @@ const cloudinary = require('../config/cloudinary')
 
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
-  params: {
+  params: (req, file) => ({
     folder: 'linkbridge/codeanddoc',
-  }
+    resource_type: 'raw',
+    format: 'pdf'
+  })
 })
 
-const upload = multer({ storage})
+const upload = multer({storage})
 
 // create progress
 progressRouter.post('/new', createProgress)

@@ -58,7 +58,7 @@ const AddToFeed = ({users}) => {
       const connectedUsers = user.connections.map((item) => {
         return item.user 
       })
-      if(user.fullname !== item.fullname && !connectedUsers.some((connectedUser) => connectedUser.fullname === item.fullname)){ 
+      if(user?.fullname !== item?.fullname && !connectedUsers.some((connectedUser) => connectedUser?.fullname === item?.fullname)){ 
         return (
         <div className='flex my-2 '>
           <img className='m-2 w-12 h-12 rounded-full object-cover' src={`${item.profilePicture}`} alt="" />
@@ -275,7 +275,7 @@ export const PeerPost = ({profile, post}) => {
         })}
       </div>
       <div className='w-full flex my-2 gap-2 px-2 max-sm:mt-2'>
-        <img className='w-10 h-10 rounded-full max-sm:size-8' src={user.profilePicture ? `${url}/${user.profilePicture}` : sample} alt="" />
+        <img className='w-10 h-10 rounded-full max-sm:size-8' src={user.profilePicture ? `${user.profilePicture}` : sample} alt="" />
         <div className="flex items-center relative w-full">
           <input className='w-full h-10 max-sm:h-8 border border-slate-300 rounded-lg font-sans px-2 text-sm outline-blue-500 placeholder-slate-700 max-sm:text-xs' type="text" name='comment' value={newComment.comment} onChange={handleChange} placeholder={`Comment as ${user.fullname}`} />
           <i onClick={handleSubmit} className="cursor-pointer text-blue-800 fa-solid fa-paper-plane absolute right-3"></i>
