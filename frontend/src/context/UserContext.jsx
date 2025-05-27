@@ -5,8 +5,7 @@ import { createContext } from 'react'
 const UserContext = createContext(null)
 
 export const UserContextProvider = (props) => {
-    // const url = 'https://linkbridgebackend.vercel.app'
-    const url = 'http://localhost:5000'
+    const url = 'https://linkbridgebackend.vercel.app'
 
     const connection_message = "send you a connection request"
     const project_message = "send you a request to supervise their project"

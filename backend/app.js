@@ -7,8 +7,7 @@ const database = require('./config/db')
 const path = require('path')
 
 app.use(cors({
-    // origin: ["https://linkbridgeweb.vercel.app"],
-    origin: ["http://localhost:5173"],
+    origin: ["https://linkbridgeweb.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     allowedHeaders: ['Content-Type', 'Authorization', 'token'],
     credentials: true
@@ -17,8 +16,7 @@ app.use(cors({
 
 app.options('*', cors(
     {
-        // origin: ["https://linkbridgeweb.vercel.app"],
-        origin: ["http://localhost:5173"],
+        origin: ["https://linkbridgeweb.vercel.app"],
         methods: ["POST", "GET", "PUT", "DELETE"],
         allowedHeaders: ['Content-Type', 'Authorization', 'token'],
         credentials: true
