@@ -1,8 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import UserContext from '../context/UserContext'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import sample from '../assets/avatar.jpg'
+
 const SearchUser = ({searchUser}) => {
   const navigate = useNavigate()
   const token = localStorage.getItem("token")
@@ -94,7 +96,7 @@ const SearchUser = ({searchUser}) => {
     <>
     <div className='cursor-pointer bg-white flex border my-3 py-4 px-3 justify-between rounded-xl drop-shadow-sm'>
         <div onClick={() => handleClick(searchUser._id)} className='flex items-start'>
-          <img className='m-2 w-16 h-16 object-cover rounded-full' src={`${searchUser.profilePicture}`} alt="" />
+          <img className='m-2 w-16 h-16 object-cover rounded-full' src={`${searchUser.profilePicture ? searchUser.profilePicture : sample}`} alt="" />
           <div>
             <h1 className='font-bold'>{searchUser.fullname}</h1>
             <p className='truncate w-64 max-sm:text-[13px] max-sm:mt-2'>{searchUser.description}</p>

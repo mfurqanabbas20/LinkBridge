@@ -96,13 +96,13 @@ const OtherProfile = () => {
             {/* profile cover photo */}
               <img className="w-full h-full rounded-xl object-cover"
                 src={
-                  otherUser.coverPicture ? `${url}/${otherUser.coverPicture}` : cover_pic
+                  otherUser.coverPicture ? `${otherUser.coverPicture}` : cover_pic
                 }
                 alt=""
               />
             <div className="profile-photo rounded-full w-32 h-32 ml-4 bg-red-950 absolute -bottom-12">
                 <img className="w-full h-full rounded-full object-cover"
-                  src={otherUser.profilePicture ? `${url}/${otherUser.profilePicture}`:sample_profile}
+                  src={otherUser.profilePicture ? `${otherUser.profilePicture}`:sample_profile}
                   alt=""
                 />
               
