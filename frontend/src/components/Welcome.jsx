@@ -46,13 +46,13 @@ const Welcome = () => {
     </div>
     <WelcomeTime/>
   </div>
-  <div className='flex justify-between px-14 gap-3 mt-8 max-md:px-2 w-full max-md:flex-wrap' data-aos="fade-right" data-aos-delay="600" data-aos-duration="1000" data-aos-easing="ease-in-sine">
+  <div className='flex justify-between px-5 gap-3 mt-8 max-md:px-2 w-full max-md:flex-wrap' data-aos="fade-right" data-aos-delay="600" data-aos-duration="1000" data-aos-easing="ease-in-sine">
       <WelcomeCards color={'orange'} text="Find Projects" icon={<i className="fa-solid fa-magnifying-glass"></i>}/>
       <WelcomeCards color={'blue'} text="Track Projects" icon={<i className="fa-solid fa-gear"></i>}/>
       <WelcomeCards color={'purple'} text="Find Talent" icon={<i className="fa-solid fa-user"></i>}/>
       <WelcomeCards color={'yellow'} text="Solve Problems" icon={<i className="fa-solid fa-pen"></i>}/>
   </div>
-    </div>
+  </div>
   )
 }
 
