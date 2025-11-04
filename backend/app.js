@@ -6,22 +6,22 @@ const PORT = process.env.PORT
 const database = require('./config/db')
 const path = require('path')
 
-app.use(cors({
-    origin: ["https://linkbridgeweb.vercel.app"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
-    allowedHeaders: ['Content-Type', 'Authorization', 'token'],
-    credentials: true
-   }
-))
 
-app.options('*', cors(
-    {
-        origin: ["https://linkbridgeweb.vercel.app"],
-        methods: ["POST", "GET", "PUT", "DELETE"],
-        allowedHeaders: ['Content-Type', 'Authorization', 'token'],
-        credentials: true
-}
-))
+// app.use(cors())
+app.use(cors({
+  origin: "http://localhost:5173",  // your frontend URL
+  credentials: true                 // allow credentials
+}));
+
+
+// app.options('*', cors(
+//     {
+//         origin: ["https://linkbridgeweb.vercel.app"],
+//         methods: ["POST", "GET", "PUT", "DELETE"],
+//         allowedHeaders: ['Content-Type', 'Authorization', 'token'],
+//         credentials: true
+// }
+// ))
 
 // connecting the database
 database()
