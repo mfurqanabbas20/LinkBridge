@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
-import sample from '../assets/lognew.png'
-import UserContext from '../context/UserContext'
+import { useContext, useEffect, useState } from 'react'
+import UserContext from '../context/UserContext';
+import sample from '../assets/avatar.jpg';
 import axios from 'axios'
 import {ProgressBar} from 'react-loader-spinner'
 import {format} from 'timeago.js'
@@ -61,7 +61,7 @@ const AddToFeed = ({users}) => {
       if(user?.fullname !== item?.fullname && !connectedUsers.some((connectedUser) => connectedUser?.fullname === item?.fullname)){ 
         return (
         <div className='flex my-2 '>
-          <img className='m-2 w-12 h-12 rounded-full object-cover' src={`${item.profilePicture}`} alt="" />
+          <img className='m-2 w-12 h-12 rounded-full object-cover' src={`${item.profilePicture || sample}`} alt="" />
           <div className='w-9/12'>
             <h1 onClick={() => navigate(`/user/${item?._id}`)} className='cursor-pointer font-semibold'>{item.fullname}</h1>
             <p className=' text-sm'>{item.description}</p>
