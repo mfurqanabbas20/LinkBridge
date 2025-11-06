@@ -14,7 +14,7 @@ app.use(cors());
 // }));
 
 
-app.options('*', cors(
+app.use(cors(
     {
         origin: ["https://linkbridgeweb.vercel.app"],
         methods: ["POST", "GET", "PUT", "DELETE"],
