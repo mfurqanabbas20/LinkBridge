@@ -33,7 +33,7 @@ and get paid for solving industry challenges — all in one place.
 
 ## Live Demo
 
-🔗 **Frontend:** https://linkbridgeweb.vercel.app
+**Frontend:** https://linkbridgeweb.vercel.app
 
 <!-- TODO: These backend/socket URLs are inferred from the source (frontend points to the backend host below). Confirm/replace if different. -->
 - **Backend API:** https://linkbridgebackend.vercel.app
@@ -41,17 +41,17 @@ and get paid for solving industry challenges — all in one place.
 
 ## Features
 
-- 🔐 **Authentication & Accounts** — Email/password sign-up & login with JWT, Google OAuth sign-in, password hashing (bcrypt), and email-based password reset (SendGrid / Nodemailer).
-- 👥 **Role-based Profiles** — Distinct experiences for **Students**, **Teachers**, and **Industry Professionals**, each with editable profile and cover images (stored on Cloudinary).
-- 🤝 **Connections** — Send, accept, and reject connection requests to build a professional network.
-- 🏭 **Industry Problems** — Professionals post real-world problems with a budget and deadline; students apply with cover letters/proposals, and the poster assigns the work.
-- 💳 **Payments (Stripe)** — Secure checkout and payouts for industry problems via Stripe, including Stripe Connect accounts for receiving funds.
-- 📊 **Project Supervision & Progress Tracking** — Students create projects, request a teacher as supervisor (approve/reject flow), invite members, and track progress through staged milestones (requirements → system → UI → frontend → backend → testing → deployment) with a completion percentage, plus code & documentation uploads.
-- 💡 **Idea Incubator** — Post and categorize ideas, and let the community rate them.
-- 📚 **Knowledge Hub** — Share and download learning resources/documents.
-- 🖼️ **Peer Showcase & Feedback** — Publish project posts with media, like and comment, and receive feedback. Sentiment analysis (`sentiment` / `compromise`) is used to help interpret feedback.
-- 💬 **Real-time Messaging** — One-to-one chat powered by Socket.IO.
-- 🔔 **Notifications** — In-app alerts for connection requests, supervision requests, and other activity.
+- **Authentication & Accounts** — Email/password sign-up & login with JWT, Google OAuth sign-in, password hashing (bcrypt), and email-based password reset (SendGrid / Nodemailer).
+- **Role-based Profiles** — Distinct experiences for **Students**, **Teachers**, and **Industry Professionals**, each with editable profile and cover images (stored on Cloudinary).
+- **Connections** — Send, accept, and reject connection requests to build a professional network.
+- **Industry Problems** — Professionals post real-world problems with a budget and deadline; students apply with cover letters/proposals, and the poster assigns the work.
+- **Payments (Stripe)** — Secure checkout and payouts for industry problems via Stripe, including Stripe Connect accounts for receiving funds.
+- **Project Supervision & Progress Tracking** — Students create projects, request a teacher as supervisor (approve/reject flow), invite members, and track progress through staged milestones (requirements → system → UI → frontend → backend → testing → deployment) with a completion percentage, plus code & documentation uploads.
+- **Idea Incubator** — Post and categorize ideas, and let the community rate them.
+- **Knowledge Hub** — Share and download learning resources/documents.
+- **Peer Showcase & Feedback** — Publish project posts with media, like and comment, and receive feedback. Sentiment analysis (`sentiment` / `compromise`) is used to help interpret feedback.
+- **Real-time Messaging** — One-to-one chat powered by Socket.IO.
+- **Notifications** — In-app alerts for connection requests, supervision requests, and other activity.
 
 <!-- TODO: An AI key (VITE_AI_KEY) is referenced in the Idea Incubator. Confirm which AI provider/feature this powers and document it here. -->
 
@@ -81,18 +81,6 @@ and get paid for solving industry challenges — all in one place.
 
 **Hosting**
 - [Vercel](https://vercel.com/) (frontend, and serverless backend)
-
-## Screenshots
-
-<!-- TODO: Replace these placeholders with real screenshots. Drop images in a /screenshots folder and update the paths. -->
-
-| Landing Page | Dashboard |
-| :---: | :---: |
-| ![Landing page](./screenshots/landing.png) | ![Dashboard](./screenshots/dashboard.png) |
-
-| Industry Problems | Real-time Chat |
-| :---: | :---: |
-| ![Industry problems](./screenshots/industry-problems.png) | ![Chat](./screenshots/chat.png) |
 
 ## Project Structure
 
@@ -317,5 +305,5 @@ Add a `LICENSE` file to formalize licensing terms.
 
 <!-- TODO: Add contact details (email, LinkedIn, Twitter/X, etc.) for the authors. -->
 
-📧 Contact: <!-- TODO: add a contact email -->
-🐙 GitHub: [@mfurqanabbas20](https://github.com/mfurqanabbas20)
+Contact: <!-- TODO: add a contact email -->
+GitHub: [@mfurqanabbas20](https://github.com/mfurqanabbas20)
